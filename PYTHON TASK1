@@ -1,0 +1,165 @@
+
+''' 
+1. COUNTING VOWELS IN GIVEN STRING 
+'''
+#Initializing variables with values
+string="Guvi Geeks Network Private Limited"
+count=0
+#Iterating the given string
+for i in string:
+#checking if taken string has vowels aeiou, if so incrementing it and checking the complete string
+      if(i=='a' or i=='e' or i=='i' or i=='o' or i=='u' or i=='A' or i=='E' or i=='I' or i=='O' or i=='U'):
+            count=count+1
+#Printing the count of vowels
+print("Number of vowels are:", count)
+'''----------------------------------------------------------------------------------------------------------------------'''
+
+'''
+2. Creating Pyramid of number from 1 to 20 using for loop
+'''
+#Initializing Variables with values
+rows = 20
+k = 0
+count=0
+count1=0
+#Iterating with declared values 
+for i in range(1, rows+1):
+#Minus with iterated values 
+    for space in range(1, (rows-i)+1):
+#And printing them in new line - after minus the value with 1
+        print("  ", end="")
+        count+=1
+    while k!=((2*i)-1):
+        if count<=rows-1:
+            print(i+k, end=" ")
+            count+=1
+        else:
+            count1+=1
+            print(i+k-(2*count1), end=" ")
+        k += 1
+    count1 = count = k = 0
+    print()
+
+'''----------------------------------------------------------------------------------------------------------------------'''
+'''
+3. Taking a string and Removing vowels and printing the new string without vowels
+'''
+#Taking a string from user
+string=input("ENTER A STRING TO REMOVE VOWELS:")
+#ITERATING OVER A STRING
+for i in string:
+#CHECKING IF STRING IS NOT VOWELS
+     if i not in "AEIOUaeiou":
+#PRINTING NEW STRING WITHOUT VOWELS
+          print(i,end=" ")
+
+'''------------------------------------------------------------------------------------------------------------------------'''
+
+'''
+4. Taking a string and returning the number of unique characters in it
+'''
+#Taking a string from user
+print("Return unique number")
+string=input("Enter a string to return unique characters")
+#Removing duplicates using set method
+result=set(string)
+#Printing the non duplicate characters
+print(result)
+
+'''-----------------------------------------------------------------------------------------------------------------------'''
+'''
+5. Taking a string and returning true if it is palindrome, else returning false
+'''
+#Taking two string from user
+print("Palindrome or not")
+num_1=input("Enter first string:")
+num_2=input("Enter second string:")
+#Checking if first string and second string are same printing true else false
+if (num_1==num_2):
+     print("True")
+else:
+     print("False")
+
+'''----------------------------------------------------------------------------------------------------------------------'''
+'''
+6. Taking two strings and returning longest common substring between them 
+'''
+print("Longest sub string")
+#Taking input string from user
+string1=input("Enter 1st string:")
+string2=input("Enter 2nd string:")
+#defining function called longestsubstringfinder and will call this function in end of the program
+def longestSubstringFinder(string1, string2):
+    answer = ""
+#stroing length of two strings respectively
+    len1, len2 = len(string1), len(string2)
+#Iterating through the strings to find the substring from them
+    for i in range(len1):
+        match = ""
+        for j in range(len2):
+            if (i + j < len1 and string1[i + j] == string2[j]):
+                match += string2[j]
+            else:
+                if (len(match) > len(answer)): 
+                    answer = match
+                match = ""
+    return answer
+#Calling the defined function to get the output
+print(longestSubstringFinder(string1,string2))
+'''______________________________________________________________________________________________________________________'''
+'''
+7. Taking a string and returns the most frequent character from it
+'''
+#defining user defined function called find_dup_char and calling them whereever required
+def find_dup_char(input):
+ #assigning a empty list to a variable called x
+    x=[]
+#iterating over a input from user and finding the frequent characters from them
+    for i in input1:
+        if i not in x and input1.count(i)>1:
+            x.append(i)
+    print(" ".join(x))
+if __name__ == "__main__":
+    input1 = input("Enter a string to print the frequent characters from it:")
+    find_dup_char(input1)
+
+'''______________________________________________________________________________________________________________________'''
+'''
+8. Taking a string and returning true if it is anagram of another string else returning false
+'''
+#defining user defined function inside a class
+class Solution:
+    def func(self, a, b):
+#if both string are string returning true else false
+        if sorted(a) == sorted(b):
+            return True
+        else:
+            return False
+if __name__ == '__main__':
+    print("Anagram or not"," ")
+#Taking user inputs
+    a=input("Enter a string:")
+    b=input("Enter another string:")
+#Calling the already defined funcation and printing respectively
+    if(Solution().func(a, b)):
+      print("The two strings are anagram of each other")
+    else:
+      print("The two strings are not anagram of each other")
+'''______________________________________________________________________________________________________________________'''
+'''
+9. Taking a string and returning no. of words in it
+'''
+#importing regular expression
+import re
+#initializing string 
+test_string = input("Enter a string")
+#printing original string
+print ("The original string is : " + test_string)
+#using builtin function called "findall" from re dictionary and calc the words
+res = len(re.findall(r'\w+', test_string))
+print ("The number of words are : " + str(res))
+
+
+     
+
+
